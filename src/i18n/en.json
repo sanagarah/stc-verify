@@ -1,0 +1,26 @@
+{
+    "language": "English",
+    "form": {
+        "verifyTitle": "Digital Document Verification",
+        "verifySubTitle": "verify your digital certification easily",
+        "confirmTitle": "This document is verified and has been issued by STC Bank",
+        "idNumber": "ID Number",
+        "idNumberPlaceholder": "Enter your id number",
+        "referenceNumber": "Reference Number",
+        "referenceNumberPlaceholder": "Enter your reference number",
+        "certification": "Digital Certificate pdf",
+        "certificateDetails": "id number and reference number"
+    },
+    "button": {
+        "submit": "Submit",
+        "download": "Download Document",
+        "verify": "Verify another document",
+        "view": "View",
+        "send": "The certification has been send successfully"
+    },
+    "error": {
+        "required": "required field",
+        "length": "The number should consists of {{number}} digits"
+    },
+    "policy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fringilla eget felis vel vehicula. Quisque vestibulum imperdiet urna"
+}

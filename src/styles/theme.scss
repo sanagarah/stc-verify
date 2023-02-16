@@ -1,0 +1,32 @@
+@import '~bootstrap/scss/functions';
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+$input-placeholder-color: #d1d1d1;
+
+$theme-colors: (
+  'primary': #50048c,
+  'secondary': #40bc84,
+  'gray-100': #f8f4f4,
+  'gray-200': #cacaca,
+  'error': #ad1b1b
+) !default;
+
+@import '~bootstrap/scss/bootstrap.scss';
+
+
+button:disabled {
+  background-color: #cacaca !important;
+  border-color:  #cacaca  !important;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
