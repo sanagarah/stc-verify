@@ -1,6 +1,6 @@
 import { languages } from "../constants";
 
-const currentLang = localStorage.getItem("locale");
+const currentLang = localStorage.getItem("locale") || languages.EN;
 
 export const changeLang = () => {
   const switchedLang =
