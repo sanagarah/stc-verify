@@ -1,19 +1,16 @@
-import React from "react";
-import { Suspense } from "react";
-import {
-  getCastPath,
-  getDefaultPath,
-  getMoviesPath,
-  getOverviewPath,
-  getTrailersPath,
-} from "../paths";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import MovieSearchLayout from "../../components/layouts/movie-search-layout";
+import React, { Suspense } from "react";
+import { VerifyPagePath, ConfirmPagePath, PDFPagePath } from "../paths";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-const OverviewPage = React.lazy(() => import("src/components/pages/overview"));
-const MoviesPage = React.lazy(() => import("src/components/pages/movies"));
-const CastPage = React.lazy(() => import("src/components/pages/cast"));
-const TrailersPage = React.lazy(() => import("src/components/pages/trailers"));
+const VerifyPage = React.lazy(
+  () => import("../../components/pages/verify-page")
+);
+
+const ConfirmPage = React.lazy(
+  () => import("../../components/pages/confirm-page")
+);
+
+const PDFPage = React.lazy(() => import("../../components/pages/pdf-page"));
 
 const withSuspense = (WrappedComponent: any) => {
   return (
@@ -32,37 +29,25 @@ export const withSuspenseComponents = (element: any) => {
 export default function Routing() {
   return (
     <Suspense>
-      <MovieSearchLayout>
-        <BrowserRouter>
-          <Routes>
-            <Route
-              key="DefaultPage"
-              path={getDefaultPath()}
-              element={<Navigate to={getOverviewPath()} replace />}
-            />
-            <Route
-              key="OverviewPage"
-              path={getOverviewPath()}
-              element={withSuspenseComponents(<OverviewPage />)}
-            />
-            <Route
-              key="MoviesPage"
-              path={getMoviesPath()}
-              element={withSuspenseComponents(<MoviesPage />)}
-            />
-            <Route
-              key="CastPage"
-              path={getCastPath()}
-              element={withSuspenseComponents(<CastPage />)}
-            />
-            <Route
-              key="TrailersPage"
-              path={getTrailersPath()}
-              element={withSuspenseComponents(<TrailersPage />)}
-            />
-          </Routes>
-        </BrowserRouter>
-      </MovieSearchLayout>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            key="VerifyPage"
+            path={VerifyPagePath()}
+            element={withSuspenseComponents(<VerifyPage />)}
+          />
+          <Route
+            key="ConfirmPage"
+            path={ConfirmPagePath()}
+            element={withSuspenseComponents(<ConfirmPage />)}
+          />
+          <Route
+            key="PDFPage"
+            path={PDFPagePath()}
+            element={withSuspenseComponents(<PDFPage />)}
+          />
+        </Routes>
+      </BrowserRouter>
     </Suspense>
   );
 }

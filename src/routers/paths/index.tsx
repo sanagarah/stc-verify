@@ -1,19 +1,11 @@
-export function getDefaultPath() {
+export function VerifyPagePath() {
   return `/`;
 }
 
-export function getOverviewPath() {
-  return `/overview`;
+export function ConfirmPagePath() {
+  return "/confirm";
 }
 
-export function getMoviesPath() {
-  return `/movies`;
-}
-
-export function getCastPath() {
-  return `/cast`;
-}
-
-export function getTrailersPath() {
-  return `/trailers`;
+export function PDFPagePath() {
+  return `/confirm/pdf`;
 }
